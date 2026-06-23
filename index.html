@@ -138,6 +138,28 @@ body{
   box-shadow:var(--shadow);
 }
 
+/* 복사 토스트 */
+.copy-toast{
+  position:fixed;
+  left:50%;
+  bottom:30px;
+  transform:translateX(-50%) translateY(20px);
+  background:rgba(34,34,34,.95);
+  color:#fff;
+  padding:12px 22px;
+  border-radius:999px;
+  font-size:14px;
+  font-weight:800;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .35s ease, transform .35s ease;
+  z-index:9999;
+}
+.copy-toast.show{
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+}
+
 /* 개인작 */
 .work-list{
   display:flex;
@@ -452,11 +474,11 @@ body{
 <div class="wrap">
 
   <div class="hero">
-    <div class="badge">마롱 안내사항</div>
+    <div class="badge">작가 인사말</div>
     <h1>개인작 아바타 분양</h1>
     <p>
-      안녕하세요! 마롱입니다!<br>
-      해당 커미션은 이미 완성 되어 있는 아바타, 즉 개인작품을 판매하는 커미션입니다!<br>
+      안녕하세요. 노랭입니다!<br>
+      해당 커미션은 이미 완성 되어 있는 버츄얼, 즉 개인작품을 판매하는 커미션입니다!<br>
       본인의 미감을 믿지 못하시는 분들이나 예쁜 아바타를 빨리 만나보고 싶은 분들에게 추천드려요!<br><br>
       제가 사용한다는 마음으로 꼼꼼하고 예쁘게 만들어드리니 걱정없이 문의주세요!
     </p>
@@ -472,7 +494,7 @@ body{
 
     <div class="form-item">
       <label class="form-label">2. 원하는 개인작</label>
-      <input class="form-input" id="formWork" placeholder="ex) 아바타 1">
+      <input class="form-input" id="formWork" placeholder="ex) 아바타 3">
     </div>
 
     <div class="form-item">
@@ -501,36 +523,61 @@ body{
   </div>
 
   <div class="notice">
-    <div class="section-title">안내사항</div>
-    <ol class="notice-list">
-      <li>본 상품은 오리지널 제작이 아닌, <span>BOOTH 등에서 판매되는 파츠를 활용해 제작된 뚜따 완성형 아바타입니다.</span></li>
-      <li>사용된 아바타와 파츠는 양측 구매 조건이 있으며, <span>의뢰자님과 작업자 모두 구매가 완료되어야 작업 및 파일 전달이 가능합니다.</span></li>
-      <li>작업자가 보유하지 않은 파츠가 포함된 경우, <span>해당 파츠는 의뢰자님께서 직접 구매해주셔야 합니다.</span></li>
-      <li>파츠 선물 또는 구매 후에는 환불이 어려울 수 있으니, <span>구매 전 반드시 상품 설명과 사용 조건을 확인해주세요.</span></li>
-      <li>상업적 이용 허가가 별도로 필요한 파츠는 <span>의뢰자님께서 직접 확인 및 허가를 받아주셔야 합니다.</span></li>
-      <li>작업자의 실수로 발생한 오류는 <span>무상 A/S 가능합니다.</span></li>
-      <li>작업 완료 후 단순 변심으로 인한 수정은 <span>추가금이 발생할 수 있습니다.</span></li>
-      <li>완성된 작업물은 제3자 또는 타 작업자에게 무단 공유하실 수 없으며, <span>추가 작업이 필요한 경우 반드시 사전에 협의해주세요.</span></li>
-    </ol>
+    <div class="section-title">필독사항</div>
+    <ul class="notice-list">
+      <li>본 상품은 오리지널 제작이 아닌, BOOTH에서 판매되는 파츠를 활용해 <strong>제작이 완료된 개인작 아바타</strong>입니다.</li>
+      <li>사용된 아바타와 파츠는 <strong>양측 구매 조건</strong>이 있으며, 의뢰자님과 작업자 모두 구매가 완료되어야 작업 및 파일 전달이 가능합니다.</li>
+      <li>구매 후 간단한 정보 변경 및 기본 설정 후 전달됩니다.</li>
+      <li>개인작 특성상 선착순 <strong>1인 판매</strong>이며, <strong>판매 완료 시 즉시 마감</strong>됩니다.</li>
+      <li>구매 후 단순 변심에 의한 환불은 불가능합니다.</li>
+      <li>작업자의 실수로 발생한 오류는 무상 A/S 가능합니다.</li>
+      <li>아바타에 사용된 파츠 및 텍스처는 모두 <strong>원 제작자의 이용약관을 준수합니다.</strong></li>
+      <li><strong>재배포, 공유, 판매, 대여를 절대 금지합니다.</strong></li>
+      <li>파일은 마지막 전달일 기준 3개월간 보관 후 정리될 수 있습니다.</li>
+      <li>해당 커미션의 필독사항 및 BOOTH 파츠 원제작자의 <strong>이용약관을 준수하지 않을 시 발생하는 모든 문제는 구매자 본인 책임입니다.</strong></li>
+    </ul>
   </div>
 
 </div>
 
+<div id="copyToast" class="copy-toast">복사 되었습니다</div>
+
 <script>
 const BASE = "https://user813324534.github.io/artmug/";
+
+/*
+  개인작 추가 방법
+
+  최신 작품이 위로 오게 하려면 avatarWorks 배열의 맨 위에 새 작품을 추가하세요.
+
+  예시:
+  {
+    button:"아바타 4",
+    title:"4번 작품 제목",
+    head:"입력",
+    body:"입력",
+    currentSlide:0,
+    slides:[
+      ["메인사진", BASE+"images/avatar4/main.png", "대표 이미지 설명"],
+      ["성형", BASE+"images/avatar4/face.png", "성형 설명"],
+      ["페이셜", BASE+"images/avatar4/facial.gif", "페이셜 설명"],
+      ["구성품", BASE+"images/avatar4/item.png", "구성품 설명"]
+    ]
+  },
+*/
 
 const avatarWorks = [
   {
     button:"아바타 3",
-    title:"러블리 데일리 아바타",
-    head:"밀티나",
-    body:"시나노",
+    title:"3번 작품",
+    head:"입력",
+    body:"입력",
     currentSlide:0,
     slides:[
-      ["메인사진", BASE+"images/test.png", "전체 분위기와 첫인상을 확인할 수 있는 대표 이미지입니다."],
-      ["성형", BASE+"images/test.png", "얼굴 비율과 인상을 자연스럽게 정리했습니다."],
-      ["페이셜", BASE+"images/test.png", "방송 리액션에 활용하기 좋은 표정 구성입니다."],
-      ["구성품", BASE+"images/test.png", "아바타에 포함된 구성과 사용 파츠를 확인할 수 있습니다."]
+      ["메인사진", BASE+"images/test.png", "작품의 전체적인 분위기를 확인할 수 있는 대표 이미지입니다."],
+      ["좌측", BASE+"images/test.png", "아바타의 측면 느낌을 확인할 수 있습니다."],
+      ["우측", BASE+"images/test.png", "반대쪽 디테일과 실루엣을 확인할 수 있습니다."],
+      ["페이셜", BASE+"images/test.png", "표정 구성과 방송용 리액션 느낌을 확인할 수 있습니다."]
     ]
   },
   {
@@ -548,15 +595,15 @@ const avatarWorks = [
   },
   {
     button:"아바타 1",
-    title:"3번 작품",
-    head:"입력",
-    body:"입력",
+    title:"러블리 데일리 아바타",
+    head:"밀티나",
+    body:"시나노",
     currentSlide:0,
     slides:[
-      ["메인사진", BASE+"images/test.png", "작품의 전체적인 분위기를 확인할 수 있는 대표 이미지입니다."],
-      ["좌측", BASE+"images/test.png", "아바타의 측면 느낌을 확인할 수 있습니다."],
-      ["우측", BASE+"images/test.png", "반대쪽 디테일과 실루엣을 확인할 수 있습니다."],
-      ["페이셜", BASE+"images/test.png", "표정 구성과 방송용 리액션 느낌을 확인할 수 있습니다."]
+      ["메인사진", BASE+"images/test.png", "전체 분위기와 첫인상을 확인할 수 있는 대표 이미지입니다."],
+      ["성형", BASE+"images/test.png", "얼굴 비율과 인상을 자연스럽게 정리했습니다."],
+      ["페이셜", BASE+"images/test.png", "방송 리액션에 활용하기 좋은 표정 구성입니다."],
+      ["구성품", BASE+"images/test.png", "아바타에 포함된 구성과 사용 파츠를 확인할 수 있습니다."]
     ]
   }
 ];
@@ -756,6 +803,15 @@ function showOption(index){
   scroll.scrollLeft = 0;
 }
 
+function showToast(){
+  const toast = document.getElementById("copyToast");
+  toast.classList.add("show");
+
+  setTimeout(()=>{
+    toast.classList.remove("show");
+  },1500);
+}
+
 function copyForm(){
   const name = document.getElementById("formName").value.trim();
   const work = document.getElementById("formWork").value.trim();
@@ -776,7 +832,7 @@ ${option}
 ${message}`;
 
   navigator.clipboard.writeText(result).then(()=>{
-    alert("신청양식이 복사되었습니다! 작업방에 붙여넣어 보내주세요.");
+    showToast();
   }).catch(()=>{
     const temp = document.createElement("textarea");
     temp.value = result;
@@ -784,7 +840,7 @@ ${message}`;
     temp.select();
     document.execCommand("copy");
     document.body.removeChild(temp);
-    alert("신청양식이 복사되었습니다! 작업방에 붙여넣어 보내주세요.");
+    showToast();
   });
 }
 
