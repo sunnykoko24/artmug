@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>노랭꼬 아트머그</title>
+
+<script>
+/* 휴대폰에서는 모바일 전용 페이지로 자동 이동 */
+(function () {
+  var isMobileWidth = window.matchMedia('(max-width: 600px)').matches;
+  var isTouchPhone = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+  if (isMobileWidth && isTouchPhone && !location.pathname.endsWith('/mobile.html')) {
+    location.replace('mobile.html' + location.search + location.hash);
+  }
+})();
+</script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+  <!-- 상단 소개 -->
+<section class="card profile">
+    <div class="profile-top">
+      <div class="avatar">
+        <img src="assets/images/image-01-7748bfe51467.jpg" alt="노랭꼬 프로필 이미지">
+      </div>
+      <div>
+        <h1>노랭꼬</h1>
+        <div style="color:#777;font-size:14px">Warudo · VSeeFace</div>
+        <div style="color:#9a7600;font-size:12px;font-weight:800;letter-spacing:.08em;margin-top:5px">3D AVATAR COMMISSION</div>
+      </div>
+    </div>
+
+    <div class="greeting">
+      자연스러운 표정과 움직임을 중심으로 아바타를 작업합니다.<br>
+      처음 이용하시는 분도 편하게 사용할 수 있도록 작업 완료 후 설정과 사용 방법을 함께 안내드립니다.
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="section-head">
+      <div class="kicker">SERVICE</div>
+      <h2>주문 혜택</h2>
+      <div class="desc">처음 버츄얼 방송을 준비하는 분도 바로 시작할 수 있도록 함께 제공합니다.</div>
+    </div>
+    <!-- 주문 혜택 -->
+<div class="benefits">
+      <div class="benefit">
+        <div class="benefit-num">BENEFIT 01</div>
+        <b>방송 배경화면 밤/낮 세트 증정</b>
+        <p>방송 분위기에 맞춰 사용할 수 있는 낮·밤 배경화면 세트를 제공합니다.</p>
+        <button class="preview-btn" type="button" onclick="openBenefitPreview()">이미지 보기</button>
+      </div>
+      <div class="benefit">
+        <div class="benefit-num">BENEFIT 02</div>
+        <b>랜덤 프로필 사진 2장</b>
+        <p>완성된 아바타를 활용해 방송과 SNS에 사용할 수 있는 프로필 사진 2장을 랜덤으로 제작해드립니다.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-num">BENEFIT 03</div>
+        <b>초보자용 가이드</b>
+        <p>파츠 찾는 방법과 기본 세팅 방법을 정리한 가이드라인을 제공합니다.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-num">BENEFIT 04</div>
+        <b>작업용 디스코드</b>
+        <p>공지, 자료 안내와 원활한 컨펌을 위한 작업용 서버를 운영합니다.</p>
+      </div>
+    </div>
+    <div class="service-note">가이드만이 끝이 아닌 1:1 맞춤 안내도 해드리고 있습니다.</div>
+  </section>
+
+  <section class="card">
+    <div class="section-head">
+      <div class="kicker">OWNED AVATARS</div>
+      <h2>보유 아바타</h2>
+      <div class="desc">현재 작업 가능한 보유 아바타 목록입니다.</div>
+    </div>
+
+    <div class="owned-avatar-wrap">
+      <div>
+        <div class="owned-avatar-list">
+          <span class="owned-avatar-chip">마누카</span>
+          <span class="owned-avatar-chip">마야</span>
+          <span class="owned-avatar-chip">모에</span>
+          <span class="owned-avatar-chip">밀티나</span>
+          <span class="owned-avatar-chip">시나노</span>
+          <span class="owned-avatar-chip">밀피</span>
+          <span class="owned-avatar-chip">시오</span>
+          <span class="owned-avatar-chip">아이리</span>
+          <span class="owned-avatar-chip">루루네</span>
+          <span class="owned-avatar-chip">루미나</span>
+          <span class="owned-avatar-chip">마후유</span>
+          <span class="owned-avatar-chip">마오</span>
+          <span class="owned-avatar-chip">리나시타</span>
+          <span class="owned-avatar-chip">라슈샤</span>
+          <span class="owned-avatar-chip">카구야</span>
+          <span class="owned-avatar-chip">카나타</span>
+          <span class="owned-avatar-chip">코마노</span>
+        </div>
+        <div class="owned-avatar-note">목록에 없는 아바타는 기프트(선물)로 보내주셔야 작업이 가능합니다.</div>
+      </div>
+
+      <div class="owned-avatar-image-scroll" aria-label="보유 아바타 이미지 목록, 좌우로 밀어서 확인">
+        <img
+          class="owned-avatar-image"
+          src="assets/images/image-02-a777c6ae04c2.png"
+          alt="보유 아바타 안내 이미지"
+          loading="lazy" decoding="async">
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="section-head">
+      <div class="kicker">PORTFOLIO</div>
+      <h2>포트폴리오</h2>
+    </div>
+
+    <div class="tabs" role="tablist">
+      <button class="tab-btn active" data-filter="all" type="button">전체</button>
+      <button class="tab-btn" data-filter="complete" type="button">완성작</button>
+      <button class="tab-btn" data-filter="shape" type="button">성형</button>
+      <button class="tab-btn" data-filter="boing" type="button">뽀잉눈</button>
+      <button class="tab-btn" data-filter="clip" type="button">뚫림방지</button>
+      <button class="tab-btn" data-filter="wardrobe" type="button">옷장</button>
+      <button class="tab-btn" data-filter="hair" type="button">헤어텍스쳐</button>
+      <button class="tab-btn" data-filter="shadow" type="button">실시간그림자</button>
+    </div>
+
+    <!-- 포트폴리오 -->
+<div class="portfolio-shell">
+      <button class="slide-btn slide-prev" type="button" onclick="slidePortfolio(-1)" aria-label="이전">‹</button>
+      <div class="portfolio-grid" id="portfolioSlider">
+        <div class="portfolio-divider" data-divider="complete">
+          <span>완성작 포트폴리오</span>
+          <small>완성된 아바타 작업을 확인해 보세요.</small>
+        </div>
+        <article class="work" data-category="complete">
+          <div class="thumb zoom-wrap"><img src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17830833420.gif" alt="페리뇽님" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>페리뇽님 완성작</b></div>
+        </article>
+        <article class="work" data-category="complete">
+          <div class="thumb zoom-wrap"><img src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17835364490.gif" alt="아푸지망고님" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>아푸지망고님 완성작</b></div>
+        </article>
+        <article class="work" data-category="complete">
+          <div class="thumb zoom-wrap"><img src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17822242620.gif" alt="백나모님" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>백나모님 완성작</b></div>
+        </article>
+        <article class="work" data-category="complete">
+          <div class="thumb zoom-wrap"><img src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782616240.gif" alt="미티어님" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>미티어님 완성작</b></div>
+        </article>
+        <article class="work" data-category="complete">
+          <div class="thumb zoom-wrap"><img src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782614230.gif" alt="채령님" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>채령님 완성작</b></div>
+        </article>
+        <article class="work" data-category="complete">
+          <div class="thumb zoom-wrap"><img src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782612961.gif" alt="오잉님" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>오잉님 완성작</b></div>
+        </article>
+        <article class="work" data-category="complete">
+          <div class="thumb zoom-wrap"><img src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782612960.gif" alt="김뭉글님" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>김뭉글님 완성작</b></div>
+        </article>
+        <article class="work" data-category="complete">
+          <div class="thumb zoom-wrap"><img src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782573630.gif" alt="시로츠네한야님" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>시로츠네한야님 완성작</b></div>
+        </article>
+        <article class="work" data-category="complete">
+          <div class="thumb zoom-wrap"><img src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782573680.gif" alt="설레지히님" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>설레지히님 완성작</b></div>
+        </article>
+        <article class="work" data-category="complete">
+          <div class="thumb zoom-wrap"><img src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782573270.gif" alt="비코님" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>비코님 완성작</b></div>
+        </article>
+        <article class="work" data-category="complete">
+          <div class="thumb zoom-wrap"><img src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782570790.gif" alt="유비님" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>유비님 완성작</b></div>
+        </article>
+        <article class="work" data-category="complete">
+          <div class="thumb zoom-wrap"><img src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782570580.gif" alt="유메님" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>유메님 완성작</b></div>
+        </article>
+        <article class="work" data-category="complete">
+          <div class="thumb zoom-wrap"><img src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782570420.gif" alt="말금님" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>말금님 완성작</b></div>
+        </article>
+        <article class="work" data-category="complete">
+          <div class="thumb zoom-wrap"><img src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782612371.gif" alt="모쿠나님" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>모쿠나님 완성작</b></div>
+        </article>
+        <article class="work" data-category="complete">
+          <div class="thumb zoom-wrap"><img src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782612370.gif" alt="묘몽님" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>묘몽님 완성작</b></div>
+        </article>
+        <article class="work" data-category="complete">
+          <div class="thumb zoom-wrap"><img src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782613700.gif" alt="미떼님" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>미떼님 완성작</b></div>
+        </article>
+        <article class="work" data-category="complete">
+          <div class="thumb zoom-wrap"><img src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782613701.gif" alt="차차삐님" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>차차삐님 완성작</b></div>
+        </article>
+        <article class="work" data-category="complete">
+          <div class="thumb zoom-wrap"><img src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782570310.gif" alt="끼토님" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>끼토님 완성작</b></div>
+        </article>
+        <article class="work" data-category="complete">
+          <div class="thumb zoom-wrap"><img src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782570190.gif" alt="보리미님" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>보리미님 완성작</b></div>
+        </article>
+        <article class="work" data-category="complete">
+          <div class="thumb zoom-wrap"><img src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782568690.gif" alt="김기그님" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>김기그님 완성작</b></div>
+        </article>
+        <article class="work" data-category="complete">
+          <div class="thumb zoom-wrap"><img src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782569990.gif" alt="아가aga님" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>아가aga님 완성작</b></div>
+        </article>
+        <article class="work" data-category="complete">
+          <div class="thumb zoom-wrap"><img src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782578170.gif" alt="벨라님" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>벨라님 완성작</b></div>
+        </article>
+        <article class="work" data-category="complete">
+          <div class="thumb zoom-wrap"><img src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782566230.gif" alt="차나임당님" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>차나임당님 완성작</b></div>
+        </article>
+        <div class="portfolio-divider" data-divider="shape">
+          <span>성형 포트폴리오</span>
+          <small>성형 전후의 변화를 비교해 보세요.</small>
+        </div>
+        <article class="work shape-work" data-category="shape">
+          <div class="thumb zoom-wrap"><img src="assets/images/image-03-9e1aff514eab.png" alt="백나모님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>백나모님 성형</b></div>
+        </article>
+        <article class="work shape-work" data-category="shape">
+          <div class="thumb zoom-wrap"><img src="assets/images/image-04-3f0f37232987.png" alt="이유채님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>이유채님 성형</b></div>
+        </article>
+        <article class="work shape-work" data-category="shape">
+          <div class="thumb zoom-wrap"><img src="assets/images/image-05-24a6be618e20.png" alt="김숭이님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>김숭이님 성형</b></div>
+        </article>
+        <article class="work shape-work" data-category="shape">
+          <div class="thumb zoom-wrap"><img src="assets/images/image-06-bb58e6838aa4.png" alt="로지로지님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>로지로지님 성형</b></div>
+        </article>
+        <article class="work shape-work" data-category="shape">
+          <div class="thumb zoom-wrap"><img src="assets/images/image-07-2595155f9027.png" alt="설레지히님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>설레지히님 성형</b></div>
+        </article>
+        <article class="work shape-work" data-category="shape">
+          <div class="thumb zoom-wrap"><img src="assets/images/image-08-9dd0088bc217.png" alt="두부당님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>두부당님 성형</b></div>
+        </article>
+        <article class="work shape-work" data-category="shape">
+          <div class="thumb zoom-wrap"><img src="assets/images/image-09-de99304061c3.png" alt="유비님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>유비님 성형</b></div>
+        </article>
+        <article class="work shape-work" data-category="shape">
+          <div class="thumb zoom-wrap"><img src="assets/images/image-10-85d3c1f61d37.png" alt="짱새둥님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>짱새둥님 성형</b></div>
+        </article>
+        <article class="work shape-work" data-category="shape">
+          <div class="thumb zoom-wrap"><img src="assets/images/image-11-baddfeba5c5c.png" alt="흐룬님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>흐룬님 성형</b></div>
+        </article>
+        <article class="work shape-work" data-category="shape">
+          <div class="thumb zoom-wrap"><img src="assets/images/image-12-756c843a8b89.png" alt="귤너굴님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>귤너굴님 성형</b></div>
+        </article>
+        <article class="work shape-work" data-category="shape">
+          <div class="thumb zoom-wrap"><img src="assets/images/image-13-dc0242882d63.png" alt="냥시기님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>냥시기님 성형</b></div>
+        </article>
+        <div class="portfolio-divider" data-divider="boing">
+          <span>뽀잉눈 포트폴리오</span>
+          <small>눈의 움직임과 표현을 확인해 보세요.</small>
+        </div>
+        <article class="work" data-category="boing">
+          <div class="thumb zoom-wrap"><img src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17609461070.gif" alt="뽀잉눈 예시" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>뽀잉눈 예시</b></div>
+        </article>
+        <div class="portfolio-divider" data-divider="clip">
+          <span>뚫림방지 포트폴리오</span>
+          <small>전신 뚫림 방지 적용 모습을 확인해 보세요.</small>
+        </div>
+        <article class="work" data-category="clip">
+          <div class="thumb zoom-wrap"><img src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17609461230.gif" alt="헤어 뚫림 방지" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>헤어 뚫림 방지</b></div>
+        </article>
+        <div class="portfolio-divider" data-divider="wardrobe">
+          <span>옷장 포트폴리오</span>
+          <small>의상 전환과 옷장 구성을 확인해 보세요.</small>
+        </div>
+        <article class="work" data-category="wardrobe">
+          <div class="thumb zoom-wrap"><img src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17609462340.gif" alt="옷장 예시" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>옷장 예시</b></div>
+        </article>
+        <div class="portfolio-divider" data-divider="hair">
+          <span>헤어텍스처 포트폴리오</span>
+          <small>헤어 텍스처 작업을 확인해 보세요.</small>
+        </div>
+        <article class="work" data-category="hair">
+          <div class="thumb zoom-wrap"><img src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17609462470_Re.jpg" alt="헤어 텍스쳐" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>헤어 텍스쳐</b></div>
+        </article>
+        <div class="portfolio-divider" data-divider="shadow">
+          <span>실시간 그림자 포트폴리오</span>
+          <small>실시간 그림자 적용 모습을 확인해 보세요.</small>
+        </div>
+        <article class="work" data-category="shadow">
+          <div class="thumb zoom-wrap"><img src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17609461430.gif" alt="실시간 그림자" class="zoomable-image" data-lightbox-group="portfolio" loading="lazy" decoding="async"></div>
+          <div class="work-info"><b>실시간 그림자</b></div>
+        </article>
+      </div>
+      <button class="slide-btn slide-next" type="button" onclick="slidePortfolio(1)" aria-label="다음">›</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="section-head">
+      <div class="kicker">ORIGINAL AVATAR</div>
+      <h2>현재 판매 중인 개인작</h2>
+      <div class="desc">미감이 없고 아바타를 빠르게 받고 싶으신 분들에게 추천드립니다. 1인 한정 판매입니다.</div>
+    </div>
+    <!-- 현재 판매 중인 개인작 -->
+<div class="selling">
+      <div class="selling-summary">
+        <img class="selling-main zoomable-image" src="https://artmugfile4.cafe24.com/image/up_img/detail/5/goods_59282/17850729460_Re.jpg" alt="개인작04 메인 이미지" data-lightbox-group="personal" loading="lazy" decoding="async">
+        <div>
+          <span class="status">NOW SELLING</span>
+          <h3>개인작 04 · 아이리</h3>
+          <div class="price">520,000원</div>
+          <p>헤어 2종 · 의상 3종 · 액세서리 3종 · 전신 물리 · 전신 뚫림 방지 · 동물귀 연동 · 와루도 초기 세팅 씬파일</p>
+        </div>
+      </div>
+
+      <details class="gallery-details">
+        <summary>상세 이미지 보기</summary>
+        <!-- 개인작 상세 이미지 -->
+<div class="gallery-strip">
+  <figure>
+    <img src="https://artmugfile4.cafe24.com/image/up_img/detail/5/goods_59282/17850729260.gif" alt="개인작04 완성작" class="zoomable-image" data-lightbox-group="personal" loading="lazy" decoding="async">
+  </figure>
+
+  <figure>
+    <img src="assets/images/image-14-2bc7f956c9a2.png" alt="개인작04 상세 이미지 1" class="zoomable-image" data-lightbox-group="personal" loading="lazy" decoding="async">
+  </figure>
+  <figure>
+    <img src="assets/images/image-15-ce8f5f58dfa2.png" alt="개인작04 상세 이미지 2" class="zoomable-image" data-lightbox-group="personal" loading="lazy" decoding="async">
+  </figure>
+  <figure>
+    <img src="assets/images/image-16-084ea4960ea3.png" alt="개인작04 상세 이미지 3" class="zoomable-image" data-lightbox-group="personal" loading="lazy" decoding="async">
+  </figure>
+</div>
+      </details>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="section-head">
+      <div class="kicker">PROCESS</div>
+      <h2>작업 진행 순서</h2>
+      <div class="desc">각 제작 단계마다 확인을 거쳐 완성합니다.</div>
+    </div>
+    <!-- 작업 진행 순서 -->
+<div class="steps">
+      <div class="step"><div class="step-num">1</div><b>신청서 접수</b><p>신청 양식과 희망 작업 내용을 확인합니다.</p></div>
+      <div class="step"><div class="step-num">2</div><b>견적 안내</b><p>작업 구성과 예상 일정을 확정합니다.</p></div>
+      <div class="step"><div class="step-num">3</div><b>제작 및 컨펌</b><p>성형 → 페이셜 → 파츠 착용 순서로 진행합니다. 성형 컨펌은 무제한이며, 페이셜 컨펌은 1회 진행됩니다.</p></div>
+      <div class="step"><div class="step-num">4</div><b>파일 전달</b><p>완성 파일을 사용 가이드와 함께 전달합니다.</p></div>
+    </div>
+  </section>
+
+
+
+  <section class="card application-card">
+    <div class="section-head">
+      <div class="kicker">APPLICATION</div>
+      <h2>신청양식</h2>
+      <div class="desc">아래 칸에 직접 내용을 작성한 뒤 복사하여 문의해주세요.</div>
+    </div>
+
+    <!-- 신청 양식 -->
+<div class="application-box">
+      <div class="application-content">
+        <div class="application-alert">
+          신청양식 먼저 작성하여 문의 부탁드려요.<br>
+          내용을 최대한 자세히 작성해주실수록 원하시는 분위기에 더욱 가깝게 작업할 수 있습니다.
+        </div>
+
+        <div class="application-list" id="applicationFormText">
+          <div class="application-item">
+            <label for="application-work">1. 주문하실 작업명</label>
+            <input id="application-work" type="text" placeholder="예시) 와루도세트 + 뽀잉눈">
+          </div>
+
+          <div class="application-item">
+            <label for="application-channel">2. 방송국 링크 + 방송닉네임</label>
+            <textarea id="application-channel" placeholder="데뷔 전이시라면 예정 닉네임 + 데뷔예정날짜 + 플랫폼을 함께 작성해주세요."></textarea>
+          </div>
+
+          <div class="application-item">
+            <label for="application-concept">3. 컨셉 또는 참고 이미지</label>
+            <textarea id="application-concept" placeholder="정해진 컨셉이나 특징이 있으시다면 최대한 구체적으로 작성해주세요.&#10;예시) 공주 컨셉, 귀여운 느낌, 눈 크고 강아지상, 송곳니 뾰족하게 등"></textarea>
+          </div>
+
+          <div class="application-item">
+            <label for="application-parts">4. 사용하실 파츠 링크</label>
+            <textarea id="application-parts" placeholder="BOOTH에서 찾아보신 파츠가 있으시다면 링크를 작성해주세요."></textarea>
+          </div>
+
+          <div class="application-item">
+            <label>5. 디스코드 사용 여부</label>
+            <div class="application-choice" id="application-discord-choice">
+              <button type="button" data-value="O" onclick="selectDiscord(this)">O · 사용함</button>
+              <button type="button" data-value="X" onclick="selectDiscord(this)">X · 사용 안 함</button>
+            </div>
+            <input id="application-discord" type="hidden" value="">
+            <span class="application-example">
+              서버에 들어오셔야 다양한 공지 안내와 가이드가 있습니다. 들어오셔야 원활한 작업이 가능하며,<br>
+              디스코드에 없으시면 작업물 보관 연장이 어려울 수 있습니다.
+            </span>
+          </div>
+
+          <div class="application-item">
+            <label for="application-extra">6. 추가 문의사항</label>
+            <textarea id="application-extra" placeholder="추가로 궁금하신 점이나 요청사항을 자유롭게 작성해주세요."></textarea>
+          </div>
+        </div>
+
+        <button class="application-copy" type="button" onclick="copyApplicationForm(this)">작성한 신청양식 복사하기</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="card faq">
+    <div class="section-head">
+      <div class="kicker">FAQ</div>
+      <h2>자주 묻는 질문</h2>
+    </div>
+
+    <details>
+      <summary>1. 작업 기간</summary>
+      <p>
+        데뷔세트 기준 평균 2~3일 소요됩니다.<br>
+        의뢰자분의 컨펌 속도에 따라 기간이 크게 변동될 수 있습니다.
+      </p>
+    </details>
+
+    <details>
+      <summary>2. VSF의 가성비 세트와 고급 세트의 차이는 무엇인가요?</summary>
+      <p>
+        가성비 세트는 Unity만 사용하여 작업하며, 베이스 아바타에서 큰 폭의 성형은 어렵습니다.
+        또한 페이셜은 아이·우·에·오 5가지 기본 발음만 인식하며, 웹캠만으로도 사용이 가능합니다.<br><br>
+        고급 세트는 Unity와 Blender를 함께 사용하여 더욱 정밀한 성형이 가능하며,
+        52가지 페이셜을 지원하여 다양한 표정 연출이 가능하며, Face ID를 지원하는 아이폰 또는 아이패드가 필수로 필요합니다.
+      </p>
+    </details>
+
+    <details>
+      <summary>3. Warudo와 VSeeFace의 차이가 뭔가요?</summary>
+      <p>
+        Warudo(와루도)와 VSeeFace(VSF)는 단순 프로그램 차이이며, 버츄얼 제작 방식은 두 프로그램 모두 똑같아요.<br>
+        와루도 프로그램에는 다양한 기능이 있어 버츄얼로 더 많은 기능을 보여주고 싶다면 와루도,<br>
+        단순 소통을 위한 상반신 위주 방송을 하고 싶다면 VSF를 추천드립니다.<br>
+        컴퓨터 사양이 좋지 않다면 VSF를 선택해주세요. 나중에 와루도로 이사도 가능합니다.
+      </p>
+    </details>
+
+    <details>
+      <summary>4. 손 트래킹까지 가능한가요?</summary>
+      <p>네! 모든 프로그램 손 트래킹이 가능하도록 안내해드립니다.</p>
+    </details>
+
+    <details>
+      <summary>5. 작업이 완료된 후에도 헤어와 의상을 계속 추가해도 되나요?</summary>
+      <p>네! 물론 가능합니다. 추가 작업도 언제든 환영합니다.</p>
+    </details>
+  </section>
+
+  <section class="card notice-card">
+    <div class="section-head">
+      <div class="kicker">NOTICE</div>
+      <h2>주의사항</h2>
+      <div class="desc">신청 전 아래 내용을 반드시 확인해주세요.</div>
+    </div>
+    <!-- 주의 사항 -->
+<div class="notice-list">
+      <div class="notice-item">본 커미션은 오리지널이 아닌, 뚜따 커미션으로 BOOTH 사이트에서 판매하는 파츠를 전적으로 이용합니다.</div>
+      <div class="notice-item">BOOTH 대부분의 파츠는 모두 <b>양측 구매 조건</b>이며, 아바타 포함 모든 파츠는 의뢰자님과 작업자 모두 구매되어야 작업이 진행됩니다.</div>
+      <div class="notice-item">작가가 보유하고 있지 않은 파츠는 의뢰자분께서 구매해 주셔야 하며, 파츠 선물 후 환불은 어려우니 신중하게 확인 후 구매해주세요.</div>
+      <div class="notice-item">BOOTH에서 상업적 이용 허가가 필요한 파츠는 의뢰자 <b>본인이 직접 허가를 받아야 하며</b>, 허가 없이 사용할 경우 발생하는 문제는 책임지지 않습니다.</div>
+      <div class="notice-item">작업물은 해마다 1~2회 정리합니다. 정리 기간은 디스코드 내 공지로 먼저 안내드리며, 오랜 기간(최대 한 달) 동안 답변이 없을 시 작업물은 삭제됩니다.</div>
+      <div class="notice-item">모든 작업물은 포트폴리오로 사용될 수 있으며, 원치 않으실 경우 포트폴리오 비공개 옵션을 구매해주세요.</div>
+      <div class="notice-item">유니티패키지와 VRM 파일 요청 시 BOOTH 구매내역을 확인합니다.</div>
+      <div class="notice-item">작가의 실수로 인한 오류는 무제한 A/S 가능합니다.</div>
+      <div class="notice-item">작업 완료 후 단순 변심으로 인한 수정은 추가금이 발생할 수 있습니다.</div>
+      <div class="notice-item">의뢰 취소는 작업이 시작되기 전까지만 가능하며, 작업이 들어간 이후의 환불은 환불규정을 참고해주세요.</div>
+      <div class="notice-item">완성된 작업물을 제3자 또는 타 작업자에게 <b>무단 공유하는 것을 금지</b>합니다. 제가 하지 않는 작업으로 인해 맡기셔야 한다면 반드시 저와 협의 후 진행해주세요.</div>
+    </div>
+  </section>
+
+  <div class="image-modal" id="benefitPreview" aria-hidden="true" onclick="closeBenefitPreview(event)">
+    <div class="image-modal-inner">
+      <button class="image-modal-close" type="button" onclick="closeBenefitPreview(event)" aria-label="닫기">×</button>
+      <img src="assets/images/image-17-0a3596d86e9e.png" alt="방송 배경화면 밤낮 세트 예시">
+    </div>
+  </div>
+</div>
+
+
+
+<!-- 이미지 확대창 -->
+<div class="lightbox" id="siteLightbox" aria-hidden="true">
+  <div class="lightbox-stage">
+    <button class="lightbox-close" type="button" aria-label="닫기">×</button>
+    <div class="lightbox-gif-badge" aria-hidden="true">GIF</div>
+    <button class="lightbox-nav lightbox-prev" type="button" aria-label="이전 이미지">‹</button>
+    <div class="lightbox-media">
+      <img class="lightbox-image" alt="">
+    </div>
+    <button class="lightbox-nav lightbox-next" type="button" aria-label="다음 이미지">›</button>
+    <div class="lightbox-caption"></div>
+    <div class="lightbox-thumbs" aria-label="포트폴리오 이미지 목록"></div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<script src="script.js" defer></script>
+</body>
+</html>
