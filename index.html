@@ -1503,23 +1503,23 @@ body.lightbox-lock{overflow:visible}
 <span>완성작 포트폴리오</span>
 </div>
 <article class="work" data-category="complete">
-<div class="thumb zoom-wrap"><img alt="채린이임님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==" data-src="https://artmug.kr/image/up_img/detail/4/20261009_0253067b6a/17915726280.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="채린이임님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="assets/images/poster-chaerinim.jpg" data-gif="assets/gif/채린이임.gif"/></div>
 <div class="work-info"><b>채린이임님 완성작</b></div>
 </article>
 <article class="work" data-category="complete">
-<div class="thumb zoom-wrap"><img alt="뉴이님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==" data-src="https://artmug.kr/image/up_img/detail/4/20261009_0253067b6a/17915726281.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="뉴이님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="assets/images/poster-newy.jpg" data-gif="assets/gif/뉴이.gif"/></div>
 <div class="work-info"><b>뉴이님 완성작</b></div>
 </article>
 <article class="work" data-category="complete">
-<div class="thumb zoom-wrap"><img alt="주핫님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==" data-src="https://artmug.kr/image/up_img/detail/4/20261009_0253067b6a/17915726282.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="주핫님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="assets/images/poster-juhat.jpg" data-gif="assets/gif/주핫.gif"/></div>
 <div class="work-info"><b>주핫님 완성작</b></div>
 </article>
 <article class="work" data-category="complete">
-<div class="thumb zoom-wrap"><img alt="히요나님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==" data-src="https://artmug.kr/image/up_img/detail/4/20261009_0253067b6a/17915726283.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="히요나님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="assets/images/poster-hiyona.jpg" data-gif="assets/gif/히요나.gif"/></div>
 <div class="work-info"><b>히요나님 완성작</b></div>
 </article>
 <article class="work" data-category="complete">
-<div class="thumb zoom-wrap"><img alt="아루별님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==" data-src="https://artmug.kr/image/up_img/detail/4/20261009_0253067b6a/17915726284.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="아루별님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="assets/images/poster-arubyeol.jpg" data-gif="assets/gif/아루별.gif"/></div>
 <div class="work-info"><b>아루별님 완성작</b></div>
 </article>
 <article class="work" data-category="complete">
@@ -1938,6 +1938,60 @@ tabButtons.forEach(button => {
   window.refreshPortfolioImages = watchVisible;
 })();
 
+// 직접 넣은 완성작 GIF는 12~21MB라서, 목록에는 바로 보이는 장면을 두고
+// 화면에 들어온 카드부터 원본 GIF로 바꿉니다.
+(() => {
+  const root = document.getElementById('portfolioSlider');
+  if (!root) return;
+  const images = [...root.querySelectorAll('img[data-gif]')];
+  const queue = [];
+  let active = 0;
+
+  function pump() {
+    while (active < 1 && queue.length) {
+      const img = queue.shift();
+      if (!img || img.dataset.gifLoaded === '1') continue;
+      active += 1;
+      const preload = new Image();
+      const finish = (ok) => {
+        if (ok) {
+          img.src = img.dataset.gif;
+          img.dataset.gifLoaded = '1';
+        }
+        active = Math.max(0, active - 1);
+        pump();
+      };
+      preload.onload = () => finish(true);
+      preload.onerror = () => finish(false);
+      preload.src = img.dataset.gif;
+    }
+  }
+
+  function enqueue(img) {
+    if (!img || img.dataset.gifLoaded === '1' || img.dataset.gifQueued === '1') return;
+    const card = img.closest('.work');
+    if (card && card.hidden) return;
+    img.dataset.gifQueued = '1';
+    queue.push(img);
+    pump();
+  }
+
+  const observer = ('IntersectionObserver' in window)
+    ? new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          enqueue(entry.target);
+          observer.unobserve(entry.target);
+        });
+      }, { root, rootMargin: '0px 40px', threshold: 0.01 })
+    : null;
+
+  images.forEach((img) => {
+    if (observer) observer.observe(img);
+    else enqueue(img);
+  });
+})();
+
 function openBenefitPreview() {
   const modal = document.getElementById('benefitPreview');
   const button = document.querySelector('.preview-btn');
@@ -2123,7 +2177,7 @@ function fallbackCopy(text, callback, savedScrollX = window.scrollX, savedScroll
 
 
   function imageAddress(img) {
-    return img.dataset.src || img.currentSrc || img.src || '';
+    return img.dataset.gif || img.dataset.src || img.currentSrc || img.src || '';
   }
 
   function isGifImage(img) {
