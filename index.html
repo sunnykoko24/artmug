@@ -1385,6 +1385,16 @@ body.lightbox-lock{overflow:visible}
 .personal-facial-source{
   display:none!important;
 }
+.personal-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.personal-card{border:1px solid var(--line);border-radius:15px;overflow:hidden;background:#fff}
+.personal-card .thumb{aspect-ratio:3/4;background:#fff;display:flex;align-items:center;justify-content:center}
+.personal-card .thumb img{width:100%;height:100%;object-fit:contain}
+.personal-spec{margin:6px 0 0;color:#666;font-size:14px;line-height:1.7}
+.personal-spec p{margin:0}
+@media(max-width:720px){
+  .personal-grid{grid-template-columns:1fr}
+  .personal-card .thumb{aspect-ratio:3/4;max-height:520px}
+}
 </style>
 <style>
 /* 개인작 페이셜 확대창은 개인작 카드 위치에서 시작 */
@@ -1400,7 +1410,7 @@ body.lightbox-lock{overflow:visible}
 <section class="card profile">
 <div class="profile-top">
 <div class="avatar">
-<img alt="노랭꼬 프로필 이미지" src="assets/images/image-01-7748bfe51467.jpg"/>
+<img alt="노랭꼬 프로필 이미지" src="https://sunnykoko24.github.io/artmug/assets/images/image-01-7748bfe51467.jpg"/>
 </div>
 <div>
 <h1>노랭꼬</h1>
@@ -1475,7 +1485,7 @@ body.lightbox-lock{overflow:visible}
 <div class="owned-avatar-note">목록에 없는 아바타는 기프트(선물)로 보내주셔야 작업이 가능합니다.</div>
 </div>
 <div aria-label="보유 아바타 이미지 목록, 좌우로 밀어서 확인" class="owned-avatar-image-scroll">
-<img alt="보유 아바타 안내 이미지" class="owned-avatar-image" decoding="async" loading="lazy" src="assets/images/image-02-a777c6ae04c2.png"/>
+<img alt="보유 아바타 안내 이미지" class="owned-avatar-image" decoding="async" loading="lazy" src="https://sunnykoko24.github.io/artmug/assets/images/image-02-a777c6ae04c2.png"/>
 </div>
 </div>
 </section>
@@ -1501,190 +1511,211 @@ body.lightbox-lock{overflow:visible}
 <span>완성작 포트폴리오</span>
 </div>
 <article class="work" data-category="complete">
-<div class="thumb zoom-wrap"><img alt="채린이임님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/chaerinim.jpg" data-full="https://sunnykoko24.github.io/artmug/assets/gif/chaerinim.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="채린이임님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://sunnykoko24.github.io/artmug/assets/gif/chaerinim.gif" data-full="https://sunnykoko24.github.io/artmug/assets/gif/chaerinim.gif"/></div>
 <div class="work-info"><b>채린이임님 완성작</b></div>
 </article>
 <article class="work" data-category="complete">
-<div class="thumb zoom-wrap"><img alt="뉴이님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/newy.jpg" data-full="https://sunnykoko24.github.io/artmug/assets/gif/newy.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="뉴이님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://sunnykoko24.github.io/artmug/assets/gif/newy.gif" data-full="https://sunnykoko24.github.io/artmug/assets/gif/newy.gif"/></div>
 <div class="work-info"><b>뉴이님 완성작</b></div>
 </article>
 <article class="work" data-category="complete">
-<div class="thumb zoom-wrap"><img alt="주핫님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/juhat.jpg" data-full="https://sunnykoko24.github.io/artmug/assets/gif/juhat.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="주핫님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://sunnykoko24.github.io/artmug/assets/gif/juhat.gif" data-full="https://sunnykoko24.github.io/artmug/assets/gif/juhat.gif"/></div>
 <div class="work-info"><b>주핫님 완성작</b></div>
 </article>
 <article class="work" data-category="complete">
-<div class="thumb zoom-wrap"><img alt="히요나님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/hiyona.jpg" data-full="https://sunnykoko24.github.io/artmug/assets/gif/hiyona.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="히요나님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://sunnykoko24.github.io/artmug/assets/gif/hiyona.gif" data-full="https://sunnykoko24.github.io/artmug/assets/gif/hiyona.gif"/></div>
 <div class="work-info"><b>히요나님 완성작</b></div>
 </article>
 <article class="work" data-category="complete">
-<div class="thumb zoom-wrap"><img alt="아루별님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/arubyeol.jpg" data-full="https://sunnykoko24.github.io/artmug/assets/gif/arubyeol.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="아루별님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://sunnykoko24.github.io/artmug/assets/gif/arubyeol.gif" data-full="https://sunnykoko24.github.io/artmug/assets/gif/arubyeol.gif"/></div>
 <div class="work-info"><b>아루별님 완성작</b></div>
 </article>
 <article class="work" data-category="complete">
-<div class="thumb zoom-wrap"><img alt="백나모님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/17822242620.jpg" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17822242620.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="백나모님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17822242620.gif" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17822242620.gif"/></div>
 <div class="work-info"><b>백나모님 완성작</b></div>
 </article>
 <article class="work" data-category="complete">
-<div class="thumb zoom-wrap"><img alt="미티어님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/17782616240.jpg" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782616240.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="미티어님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782616240.gif" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782616240.gif"/></div>
 <div class="work-info"><b>미티어님 완성작</b></div>
 </article>
 <article class="work" data-category="complete">
-<div class="thumb zoom-wrap"><img alt="채령님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/17782614230.jpg" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782614230.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="채령님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782614230.gif" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782614230.gif"/></div>
 <div class="work-info"><b>채령님 완성작</b></div>
 </article>
 <article class="work" data-category="complete">
-<div class="thumb zoom-wrap"><img alt="오잉님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/17782612961.jpg" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782612961.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="오잉님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782612961.gif" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782612961.gif"/></div>
 <div class="work-info"><b>오잉님 완성작</b></div>
 </article>
 <article class="work" data-category="complete">
-<div class="thumb zoom-wrap"><img alt="김뭉글님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/17782612960.jpg" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782612960.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="김뭉글님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782612960.gif" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782612960.gif"/></div>
 <div class="work-info"><b>김뭉글님 완성작</b></div>
 </article>
 <article class="work" data-category="complete">
-<div class="thumb zoom-wrap"><img alt="시로츠네한야님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/17782573630.jpg" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782573630.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="시로츠네한야님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782573630.gif" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782573630.gif"/></div>
 <div class="work-info"><b>시로츠네한야님 완성작</b></div>
 </article>
 <article class="work" data-category="complete">
-<div class="thumb zoom-wrap"><img alt="설레지히님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/17782573680.jpg" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782573680.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="설레지히님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782573680.gif" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782573680.gif"/></div>
 <div class="work-info"><b>설레지히님 완성작</b></div>
 </article>
 <article class="work" data-category="complete">
-<div class="thumb zoom-wrap"><img alt="비코님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/17782573270.jpg" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782573270.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="비코님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782573270.gif" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782573270.gif"/></div>
 <div class="work-info"><b>비코님 완성작</b></div>
 </article>
 <article class="work" data-category="complete">
-<div class="thumb zoom-wrap"><img alt="유비님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/17782570790.jpg" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782570790.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="유비님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782570790.gif" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782570790.gif"/></div>
 <div class="work-info"><b>유비님 완성작</b></div>
 </article>
 <article class="work" data-category="complete">
-<div class="thumb zoom-wrap"><img alt="유메님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/17782570580.jpg" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782570580.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="유메님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782570580.gif" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782570580.gif"/></div>
 <div class="work-info"><b>유메님 완성작</b></div>
 </article>
 <article class="work" data-category="complete">
-<div class="thumb zoom-wrap"><img alt="말금님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/17782570420.jpg" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782570420.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="말금님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782570420.gif" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782570420.gif"/></div>
 <div class="work-info"><b>말금님 완성작</b></div>
 </article>
 <article class="work" data-category="complete">
-<div class="thumb zoom-wrap"><img alt="모쿠나님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/17782612371.jpg" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782612371.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="모쿠나님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782612371.gif" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782612371.gif"/></div>
 <div class="work-info"><b>모쿠나님 완성작</b></div>
 </article>
 <article class="work" data-category="complete">
-<div class="thumb zoom-wrap"><img alt="묘몽님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/17782612370.jpg" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782612370.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="묘몽님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782612370.gif" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782612370.gif"/></div>
 <div class="work-info"><b>묘몽님 완성작</b></div>
 </article>
 <article class="work" data-category="complete">
-<div class="thumb zoom-wrap"><img alt="미떼님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/17782613700.jpg" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782613700.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="미떼님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782613700.gif" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782613700.gif"/></div>
 <div class="work-info"><b>미떼님 완성작</b></div>
 </article>
 <article class="work" data-category="complete">
-<div class="thumb zoom-wrap"><img alt="차차삐님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/17782613701.jpg" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782613701.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="차차삐님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782613701.gif" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782613701.gif"/></div>
 <div class="work-info"><b>차차삐님 완성작</b></div>
 </article>
 <article class="work" data-category="complete">
-<div class="thumb zoom-wrap"><img alt="끼토님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/17782570310.jpg" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782570310.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="끼토님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782570310.gif" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782570310.gif"/></div>
 <div class="work-info"><b>끼토님 완성작</b></div>
 </article>
 <article class="work" data-category="complete">
-<div class="thumb zoom-wrap"><img alt="보리미님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/17782570190.jpg" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782570190.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="보리미님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782570190.gif" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782570190.gif"/></div>
 <div class="work-info"><b>보리미님 완성작</b></div>
 </article>
 <article class="work" data-category="complete">
-<div class="thumb zoom-wrap"><img alt="김기그님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/17782568690.jpg" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782568690.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="김기그님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782568690.gif" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782568690.gif"/></div>
 <div class="work-info"><b>김기그님 완성작</b></div>
 </article>
 <article class="work" data-category="complete">
-<div class="thumb zoom-wrap"><img alt="아가aga님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/17782569990.jpg" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782569990.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="아가aga님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782569990.gif" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782569990.gif"/></div>
 <div class="work-info"><b>아가aga님 완성작</b></div>
 </article>
 <article class="work" data-category="complete">
-<div class="thumb zoom-wrap"><img alt="벨라님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/17782578170.jpg" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782578170.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="벨라님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782578170.gif" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782578170.gif"/></div>
 <div class="work-info"><b>벨라님 완성작</b></div>
 </article>
 <article class="work" data-category="complete">
-<div class="thumb zoom-wrap"><img alt="차나임당님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/17782566230.jpg" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782566230.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="차나임당님" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782566230.gif" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17782566230.gif"/></div>
 <div class="work-info"><b>차나임당님 완성작</b></div>
 </article>
 <div class="portfolio-divider" data-divider="shape">
 <span>성형 포트폴리오</span>
 </div>
 <article class="work shape-work" data-category="shape">
-<div class="thumb zoom-wrap"><img alt="백나모님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/image-03-9e1aff514eab.jpg" data-full="assets/images/image-03-9e1aff514eab.png"/></div>
+<div class="thumb zoom-wrap"><img alt="백나모님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://sunnykoko24.github.io/artmug/assets/images/thumbs/image-03-9e1aff514eab.jpg" data-full="https://sunnykoko24.github.io/artmug/assets/images/image-03-9e1aff514eab.png"/></div>
 <div class="work-info"><b>백나모님 성형</b></div>
 </article>
 <article class="work shape-work" data-category="shape">
-<div class="thumb zoom-wrap"><img alt="이유채님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/image-04-3f0f37232987.jpg" data-full="assets/images/image-04-3f0f37232987.png"/></div>
+<div class="thumb zoom-wrap"><img alt="이유채님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://sunnykoko24.github.io/artmug/assets/images/thumbs/image-04-3f0f37232987.jpg" data-full="https://sunnykoko24.github.io/artmug/assets/images/image-04-3f0f37232987.png"/></div>
 <div class="work-info"><b>이유채님 성형</b></div>
 </article>
 <article class="work shape-work" data-category="shape">
-<div class="thumb zoom-wrap"><img alt="김숭이님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/image-05-24a6be618e20.jpg" data-full="assets/images/image-05-24a6be618e20.png"/></div>
+<div class="thumb zoom-wrap"><img alt="김숭이님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://sunnykoko24.github.io/artmug/assets/images/thumbs/image-05-24a6be618e20.jpg" data-full="https://sunnykoko24.github.io/artmug/assets/images/image-05-24a6be618e20.png"/></div>
 <div class="work-info"><b>김숭이님 성형</b></div>
 </article>
 <article class="work shape-work" data-category="shape">
-<div class="thumb zoom-wrap"><img alt="로지로지님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/image-06-bb58e6838aa4.jpg" data-full="assets/images/image-06-bb58e6838aa4.png"/></div>
+<div class="thumb zoom-wrap"><img alt="로지로지님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://sunnykoko24.github.io/artmug/assets/images/thumbs/image-06-bb58e6838aa4.jpg" data-full="https://sunnykoko24.github.io/artmug/assets/images/image-06-bb58e6838aa4.png"/></div>
 <div class="work-info"><b>로지로지님 성형</b></div>
 </article>
 <article class="work shape-work" data-category="shape">
-<div class="thumb zoom-wrap"><img alt="설레지히님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/image-07-2595155f9027.jpg" data-full="assets/images/image-07-2595155f9027.png"/></div>
+<div class="thumb zoom-wrap"><img alt="설레지히님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://sunnykoko24.github.io/artmug/assets/images/thumbs/image-07-2595155f9027.jpg" data-full="https://sunnykoko24.github.io/artmug/assets/images/image-07-2595155f9027.png"/></div>
 <div class="work-info"><b>설레지히님 성형</b></div>
 </article>
 <article class="work shape-work" data-category="shape">
-<div class="thumb zoom-wrap"><img alt="두부당님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/image-08-9dd0088bc217.jpg" data-full="assets/images/image-08-9dd0088bc217.png"/></div>
+<div class="thumb zoom-wrap"><img alt="두부당님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://sunnykoko24.github.io/artmug/assets/images/thumbs/image-08-9dd0088bc217.jpg" data-full="https://sunnykoko24.github.io/artmug/assets/images/image-08-9dd0088bc217.png"/></div>
 <div class="work-info"><b>두부당님 성형</b></div>
 </article>
 <article class="work shape-work" data-category="shape">
-<div class="thumb zoom-wrap"><img alt="유비님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/image-09-de99304061c3.jpg" data-full="assets/images/image-09-de99304061c3.png"/></div>
+<div class="thumb zoom-wrap"><img alt="유비님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://sunnykoko24.github.io/artmug/assets/images/thumbs/image-09-de99304061c3.jpg" data-full="https://sunnykoko24.github.io/artmug/assets/images/image-09-de99304061c3.png"/></div>
 <div class="work-info"><b>유비님 성형</b></div>
 </article>
 <article class="work shape-work" data-category="shape">
-<div class="thumb zoom-wrap"><img alt="짱새둥님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/image-10-85d3c1f61d37.jpg" data-full="assets/images/image-10-85d3c1f61d37.png"/></div>
+<div class="thumb zoom-wrap"><img alt="짱새둥님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://sunnykoko24.github.io/artmug/assets/images/thumbs/image-10-85d3c1f61d37.jpg" data-full="https://sunnykoko24.github.io/artmug/assets/images/image-10-85d3c1f61d37.png"/></div>
 <div class="work-info"><b>짱새둥님 성형</b></div>
 </article>
 <article class="work shape-work" data-category="shape">
-<div class="thumb zoom-wrap"><img alt="흐룬님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/image-11-baddfeba5c5c.jpg" data-full="assets/images/image-11-baddfeba5c5c.png"/></div>
+<div class="thumb zoom-wrap"><img alt="흐룬님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://sunnykoko24.github.io/artmug/assets/images/thumbs/image-11-baddfeba5c5c.jpg" data-full="https://sunnykoko24.github.io/artmug/assets/images/image-11-baddfeba5c5c.png"/></div>
 <div class="work-info"><b>흐룬님 성형</b></div>
 </article>
 <article class="work shape-work" data-category="shape">
-<div class="thumb zoom-wrap"><img alt="귤너굴님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/image-12-756c843a8b89.jpg" data-full="assets/images/image-12-756c843a8b89.png"/></div>
+<div class="thumb zoom-wrap"><img alt="귤너굴님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://sunnykoko24.github.io/artmug/assets/images/thumbs/image-12-756c843a8b89.jpg" data-full="https://sunnykoko24.github.io/artmug/assets/images/image-12-756c843a8b89.png"/></div>
 <div class="work-info"><b>귤너굴님 성형</b></div>
 </article>
 <article class="work shape-work" data-category="shape">
-<div class="thumb zoom-wrap"><img alt="냥시기님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/image-13-dc0242882d63.jpg" data-full="assets/images/image-13-dc0242882d63.png"/></div>
+<div class="thumb zoom-wrap"><img alt="냥시기님 성형 포트폴리오" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://sunnykoko24.github.io/artmug/assets/images/thumbs/image-13-dc0242882d63.jpg" data-full="https://sunnykoko24.github.io/artmug/assets/images/image-13-dc0242882d63.png"/></div>
 <div class="work-info"><b>냥시기님 성형</b></div>
 </article>
 <div class="portfolio-divider" data-divider="boing">
 <span>뽀잉눈 포트폴리오</span>
 </div>
 <article class="work" data-category="boing">
-<div class="thumb zoom-wrap"><img alt="뽀잉눈 예시" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/17609461070.jpg" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17609461070.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="뽀잉눈 예시" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17609461070.gif" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17609461070.gif"/></div>
 <div class="work-info"><b>뽀잉눈 예시</b></div>
 </article>
 <div class="portfolio-divider" data-divider="wardrobe">
 <span>옷장 포트폴리오</span>
 </div>
 <article class="work" data-category="wardrobe">
-<div class="thumb zoom-wrap"><img alt="옷장 예시" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/17609462340.jpg" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17609462340.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="옷장 예시" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17609462340.gif" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17609462340.gif"/></div>
 <div class="work-info"><b>옷장 예시</b></div>
 </article>
 <div class="portfolio-divider" data-divider="hair">
 <span>헤어텍스처 포트폴리오</span>
 </div>
 <article class="work" data-category="hair">
-<div class="thumb zoom-wrap"><img alt="헤어 텍스쳐" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/image-19-62df87acd45b.jpg" data-full="assets/images/image-19-62df87acd45b.png"/></div>
+<div class="thumb zoom-wrap"><img alt="헤어 텍스쳐" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://sunnykoko24.github.io/artmug/assets/images/thumbs/image-19-62df87acd45b.jpg" data-full="https://sunnykoko24.github.io/artmug/assets/images/image-19-62df87acd45b.png"/></div>
 <div class="work-info"><b>헤어 텍스쳐</b></div>
 </article>
 <article class="work" data-category="hair">
-<div class="thumb zoom-wrap"><img alt="브릿지" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/image-20-3c69575adbd4.jpg" data-full="assets/images/image-20-3c69575adbd4.png"/></div>
+<div class="thumb zoom-wrap"><img alt="브릿지" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://sunnykoko24.github.io/artmug/assets/images/thumbs/image-20-3c69575adbd4.jpg" data-full="https://sunnykoko24.github.io/artmug/assets/images/image-20-3c69575adbd4.png"/></div>
 <div class="work-info"><b>브릿지</b></div>
 </article>
 <div class="portfolio-divider" data-divider="shadow">
 <span>실시간 그림자 포트폴리오</span>
 </div>
 <article class="work" data-category="shadow">
-<div class="thumb zoom-wrap"><img alt="실시간 그림자" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" loading="lazy" src="assets/images/thumbs/17609461430.jpg" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17609461430.gif"/></div>
+<div class="thumb zoom-wrap"><img alt="실시간 그림자" class="zoomable-image" data-lightbox-group="portfolio" decoding="async" src="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17609461430.gif" data-full="https://artmugfile6.mycafe24.com/image/up_img/detail/4/goods_49397/17609461430.gif"/></div>
 <div class="work-info"><b>실시간 그림자</b></div>
 </article>
 </div>
 <button aria-label="다음" class="slide-btn slide-next" onclick="slidePortfolio(1)" type="button">›</button>
+</div>
+</section>
+<section class="card">
+<div class="section-head">
+<div class="kicker">PERSONAL</div>
+<h2>개인작</h2>
+<div class="personal-spec">
+<p>아바타 : 마누카</p>
+<p>구성 : 헤어1개, 의상2개, 표정(별눈, 하트눈, 눈물)</p>
+</div>
+</div>
+<div class="personal-grid">
+<article class="personal-card">
+<div class="thumb zoom-wrap"><img alt="마누카 1" class="zoomable-image" data-lightbox-group="personal" decoding="async" src="assets/개인작/마누카/1.png"/></div>
+</article>
+<article class="personal-card">
+<div class="thumb zoom-wrap"><img alt="마누카 2" class="zoomable-image" data-lightbox-group="personal" decoding="async" src="assets/개인작/마누카/2.png"/></div>
+</article>
+<article class="personal-card">
+<div class="thumb zoom-wrap"><img alt="마누카 3" class="zoomable-image" data-lightbox-group="personal" decoding="async" src="assets/개인작/마누카/3.png"/></div>
+</article>
 </div>
 </section>
 
@@ -1818,7 +1849,7 @@ body.lightbox-lock{overflow:visible}
 <div aria-hidden="true" class="image-modal" id="benefitPreview" onclick="closeBenefitPreview(event)">
 <div class="image-modal-inner">
 <button aria-label="닫기" class="image-modal-close" onclick="closeBenefitPreview(event)" type="button">×</button>
-<img alt="방송 배경화면 밤낮 세트 예시" src="assets/images/image-17-0a3596d86e9e.png"/>
+<img alt="방송 배경화면 밤낮 세트 예시" src="https://sunnykoko24.github.io/artmug/assets/images/image-17-0a3596d86e9e.png"/>
 </div>
 </div>
 </div>
@@ -2224,7 +2255,7 @@ function fallbackCopy(text, callback, savedScrollX = window.scrollX, savedScroll
       const thumbImg = document.createElement('img');
       thumbImg.src = img.currentSrc || img.getAttribute('src') || '';
       thumbImg.alt = '';
-      thumbImg.loading = 'lazy';
+      thumbImg.loading = 'eager';
       button.appendChild(thumbImg);
       button.addEventListener('click', event => {
         event.stopPropagation();
